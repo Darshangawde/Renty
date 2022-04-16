@@ -11,7 +11,7 @@ export const userLogin=(reqObj)=>async dispatch=>{
         message.success('Login success')
         dispatch({type: 'LOADING' , payload:false})
         setTimeout(() => {
-            window.location.href='/'
+            window.location.href='/' 
          
         }, 500);
     } catch (error) {
