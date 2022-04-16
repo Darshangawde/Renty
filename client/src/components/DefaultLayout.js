@@ -2,6 +2,7 @@ import React from "react";
 import { Menu, Dropdown, Button, Row , Col } from "antd";
 import {Link} from 'react-router-dom'
 
+// Default layout for all the pages (Header component)
 function DefaultLayout(props) {
     const user = JSON.parse(localStorage.getItem('user'))
   const menu = (
