@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom'
 import Spinner from '../components/Spinner';
 import moment from 'moment'
 const {RangePicker} = DatePicker
+
+// Function to start
 function Home() {
     const {cars} = useSelector(state=>state.carsReducer)
     const {loading} = useSelector(state=>state.alertsReducer)
@@ -65,6 +67,7 @@ function Home() {
 
     }
 
+    // Default layout for all pages
     return (
         <DefaultLayout>
 
