@@ -42,7 +42,7 @@ function BookingCar({ match }) {
     setFrom(moment(values[0]).format("MMM DD yyyy HH:mm"));
     setTo(moment(values[1]).format("MMM DD yyyy HH:mm"));
 
-    setTotalHours(values[1].diff(values[0], "hours"));
+    setTotalHours(values[1].diff(values[0], "hours")+1);
   }
 
   
