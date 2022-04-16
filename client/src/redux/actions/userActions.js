@@ -1,6 +1,6 @@
 import axios from "axios";
 import {message} from 'antd'
-
+//This is an userAction file
 export const userLogin=(reqObj)=>async dispatch=>{
     
     dispatch({type: 'LOADING' , payload:true})
@@ -11,7 +11,7 @@ export const userLogin=(reqObj)=>async dispatch=>{
         message.success('Login success')
         dispatch({type: 'LOADING' , payload:false})
         setTimeout(() => {
-            window.location.href='/'
+            window.location.href='/' 
          
         }, 500);
     } catch (error) {
