@@ -42,10 +42,13 @@ function BookingCar({ match }) {
     setFrom(moment(values[0]).format("MMM DD yyyy HH:mm"));
     setTo(moment(values[1]).format("MMM DD yyyy HH:mm"));
 
-    setTotalHours(values[1].diff(values[0], "hours")+1);
+    setTotalHours(values[1].diff(values[0], "hours"));
   }
 
-  
+  // functions to disable past date
+  function disablePastDates(current) {
+    return current && current < moment().day("day");
+  }
 
   function onToken(token){
     const reqObj = {
@@ -94,6 +97,8 @@ function BookingCar({ match }) {
             showTime={{ format: "HH:mm" }}
             format="MMM DD yyyy HH:mm"
             onChange={selectTimeSlots}
+
+            disabledDate={current => disablePastDates(current)}
           />
           <br />
           <button
