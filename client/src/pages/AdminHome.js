@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import DefaultLayout from "../components/DefaultLayout";
+import AdminLayout from "../components/AdminLayout";
 import { deleteCar, getAllCars } from "../redux/actions/carsActions";
 import { Col, Row, DatePicker} from "antd";
 import { Link } from "react-router-dom";
@@ -24,17 +24,8 @@ function AdminHome() {
   }, [cars]);
 
   return (
-    <DefaultLayout>
-      <Row justify="center" gutter={16} className="mt-2">
-        <Col lg={20} sm={24}>
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="mt-1 mr-2">Admin Panel</h3>
-            <button className="btn1">
-              <a href="/addcar">ADD CAR</a>
-            </button>
-          </div>
-        </Col>
-      </Row>
+    <AdminLayout>
+      <h3 className="mt-1 mr-2">Admin Panel</h3>
 
       {loading == true && <Spinner />}
 
@@ -77,7 +68,7 @@ function AdminHome() {
           );
         })}
       </Row>
-    </DefaultLayout>
+    </AdminLayout>
   );
 }
 

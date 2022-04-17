@@ -1,7 +1,7 @@
 import { Col , Row , Form , Input} from 'antd'
 import React from 'react'
 import { useDispatch , useSelector } from 'react-redux'
-import DefaultLayout from '../components/DefaultLayout'
+import AdminLayout from "../components/AdminLayout";
 import Spinner from '../components/Spinner'
 import { addCar } from '../redux/actions/carsActions'
 function AddCar() {
@@ -18,7 +18,7 @@ function AddCar() {
     }
 
     return (
-        <DefaultLayout>
+        <AdminLayout>
                {loading && (<Spinner />)}
                <Row justify='center mt-5'>
                    <Col lg={12} sm={24} xs={24} className='p-2'>
@@ -26,7 +26,7 @@ function AddCar() {
                            <h3>Add New Car</h3>
                            <hr />
                            <Form.Item name='name' label='Car name' rules={[{required: true}]}>
-                               <Input/>
+                               <Input/> 
                            </Form.Item>
                            <Form.Item name='image' label='Image url' rules={[{required: true}]}>
                                <Input/>
@@ -49,7 +49,7 @@ function AddCar() {
                    </Col>
                </Row>
 
-        </DefaultLayout>
+        </AdminLayout>
     )
 }
 
