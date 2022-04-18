@@ -44,7 +44,7 @@ function DefaultLayout(props) {
 
            <p>Designed and Developed By</p>
             <p>RENTY</p>
-          
+            <a href="/aboutus" > About us  </a>
       </div>
     </div>
   );
