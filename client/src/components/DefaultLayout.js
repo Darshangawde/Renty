@@ -19,14 +19,6 @@ function DefaultLayout(props) {
         }}>
           <li style={{color:'orangered'}}>Logout</li>
       </Menu.Item>
-      <Menu.Item>
-        <a
-         
-          href="/aboutus"
-        >
-          About us
-        </a>
-      </Menu.Item>
     </Menu>
   );
   return (
@@ -52,7 +44,7 @@ function DefaultLayout(props) {
 
            <p>Designed and Developed By</p>
             <p>RENTY</p>
-          
+            <a href="/aboutus" > About us  </a>
       </div>
     </div>
   );

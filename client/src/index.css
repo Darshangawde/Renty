@@ -146,3 +146,17 @@ svg{
 a{
   color: orangered !important;
 }
+.abt {
+  background-color: #202124;
+  height: 100vh;
+}
+.abt p {
+  color: white;
+}
+
+.abt h1 {
+  font-size:38px;
+  font-weight: bolder;
+  color: white;
+  padding: 25px;
+}
