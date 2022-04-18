@@ -9,39 +9,38 @@ import UserBookings from './pages/UserBookings';
 import AddCar from './pages/AddCar';
 import AdminHome from './pages/AdminHome';
 import EditCar from './pages/EditCar';
+import AdminLogin from './pages/AdminLogin';
 
 function App() {
   return (
     <div className="App">
-
-         
-         
-         <BrowserRouter>
+ 
+        <BrowserRouter>
+            <Route path='/adminlogin' exact component={AdminLogin} />
+            <Route path='/login' exact component={Login} />
+            <Route path='/register' exact component={Register} />
+        </BrowserRouter>
              
-             <ProtectedRoute path='/' exact component={Home} />
-             <Route path='/login' exact component={Login} />
-             <Route path='/register' exact component={Register} />
-             <ProtectedRoute path='/booking/:carid' exact component={BookingCar} />
-             <ProtectedRoute path='/userbookings' exact component={UserBookings} />
-             <ProtectedRoute path='/addcar' exact component={AddCar} />
-             <ProtectedRoute path='/editcar/:carid' exact component={EditCar} />
-             <ProtectedRoute path='/admin' exact component={AdminHome} />
+        <BrowserRouter>
+            <AdminRoute path='/addcar' exact component={AddCar} />
+            <AdminRoute path='/editcar/:carid' exact component={EditCar} />
+            <AdminRoute path='/admin' exact component={AdminHome} />
+        </BrowserRouter>
          
-         </BrowserRouter>
+        <BrowserRouter>
+            <ProtectedRoute path='/' exact component={Home} />
+            <ProtectedRoute path='/booking/:carid' exact component={BookingCar} />
+            <ProtectedRoute path='/userbookings' exact component={UserBookings} />
+        </BrowserRouter>
 
     </div>
   );
 }
 
-
-
 export default App;
-
 
 export function ProtectedRoute(props)
 {
-
-
     if(localStorage.getItem('user'))
     {
       return <Route {...props}/>
@@ -49,5 +48,15 @@ export function ProtectedRoute(props)
     else{
       return <Redirect to='/login'/>
     }
+}
 
+export function AdminRoute(props)
+{
+    if(localStorage.getItem('admin'))
+    {
+      return <Route {...props}/>
+    }
+    else{
+      return <Redirect to='/adminlogin'/>
+    }
 }
