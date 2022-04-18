@@ -27,7 +27,7 @@ function AdminLogin() {
                     className='w-100' alt='black-car-wallpaper'
                     data-aos='slide-right'
                     data-aos-duration='1500'
-                    src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"/>
+                    src="https://hdwallsource.com/img/2018/12/lamborghini-aventador-side-view-wallpaper-66278-68539-hd-wallpapers.jpg"/>
                      <h1 className='login-logo'>RENTY</h1>
                 </Col>
                 <Col lg={8} className='text-left p-5'>

@@ -3,6 +3,7 @@ import { Menu, Dropdown, Button, Row , Col } from "antd";
 import {Link} from 'react-router-dom'
 
 // Default layout for all the pages (Header component)
+// Components and props (for passing information from one component to another)
 function DefaultLayout(props) {
     const admin = JSON.parse(localStorage.getItem('admin'))
   const menu = (
