@@ -4,21 +4,21 @@ import {Link} from 'react-router-dom'
 
 // Default layout for all the pages (Header component)
 function DefaultLayout(props) {
-    const user = JSON.parse(localStorage.getItem('user'))
+    const admin = JSON.parse(localStorage.getItem('admin'))
   const menu = (
     <Menu>
         <Menu.Item>
-        <a href="/" > Home </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a href="/userbookings" > Bookings </a>
-      </Menu.Item>
-      <Menu.Item onClick={()=>{
-          localStorage.removeItem('user');
-          window.location.href='/login'
+            <a href="/admin"> Home </a>
+        </Menu.Item>
+        <Menu.Item>
+            <a href="/addcar" > ADD CAR </a>
+        </Menu.Item>
+        <Menu.Item onClick={()=>{
+            localStorage.removeItem('admin');
+            window.location.href='/adminlogin'
         }}>
-          <li style={{color:'orangered'}}>Logout</li>
-      </Menu.Item>
+            <li style={{color:'orangered'}}>Logout</li>
+        </Menu.Item>
     </Menu>
   );
   return (
@@ -27,10 +27,10 @@ function DefaultLayout(props) {
           <Row gutter={16} justify='center'>
               <Col lg={20} sm={24} xs={24}>
                   <div className="d-flex justify-content-between">
-                  <h1 ><b><Link to='/' style={{color:'orangered'}}>RENTY</Link></b></h1>
+                  <h1 ><b><Link to='/admin' style={{color:'orangered'}}>RENTY</Link></b></h1>
 
                   <Dropdown overlay={menu} placement="bottomCenter">
-                    <Button>{user.username}</Button>
+                    <Button>{admin.username}</Button>
                   </Dropdown>
                  </div>
               </Col>

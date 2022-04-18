@@ -2,20 +2,21 @@ import React from 'react'
 import {Row , Col , Form , Input} from 'antd'
 import { Link } from 'react-router-dom'
 import {useDispatch , useSelector} from 'react-redux'
-import { userLogin } from '../redux/actions/userActions'
+import { adminLogin } from '../redux/actions/adminActions'
 import AOS from 'aos';
 import Spinner from '../components/Spinner';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
-function Login() {
+function AdminLogin() {
     const dispatch = useDispatch()
     const {loading} = useSelector(state=>state.alertsReducer)
+   
     function onFinish(values) {
-        dispatch(userLogin(values))
+        dispatch(adminLogin(values))
         console.log(values)
+    }
 
- }
     return (
         <div className='login'>
             {loading && (<Spinner />)}
@@ -31,7 +32,7 @@ function Login() {
                 </Col>
                 <Col lg={8} className='text-left p-5'>
                     <Form layout='vertical' className='login-form p-5' onFinish={onFinish}>
-                         <h1>Login</h1>
+                         <h1>Admin Login</h1>
                          <hr />
                          <Form.Item name='username' label='Username' rules={[{required: true}]}>
                              <Input/>
@@ -41,11 +42,8 @@ function Login() {
                          </Form.Item>
 
                          <button className='btn1 mt-2'>Login</button>
-
                          <hr />
-
-                         <Link to='/register'>Click Here to Register</Link><br/>
-                         <Link to='/adminlogin'>I am an Admin</Link>
+                         <Link to='/login'>I am an User</Link>
 
                     </Form>
                 </Col>
@@ -56,4 +54,4 @@ function Login() {
     )
 }
 
-export default Login
+export default AdminLogin
