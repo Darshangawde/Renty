@@ -117,15 +117,14 @@ button{
   opacity: 0.5;
 }
 .login-logo{
-  color: rgb(0, 0, 0) !important;
   position: absolute;
   left:0;
   right:0;
-  top: 45%;
+  top: 60%;
   bottom: 50%;
   transform: translateY(-50% , -50%);
   font-size:45px;
-  opacity: 0.7 !important;
+  opacity: 0.2 !important;
   
 
 }
