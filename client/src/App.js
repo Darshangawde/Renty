@@ -19,7 +19,6 @@ function App() {
         <Route path="/adminlogin" exact component={AdminLogin} />
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
-        <ProtectedRoute path="/aboutus" exact component={AboutUs} />
       </BrowserRouter>
 
       <BrowserRouter>
@@ -32,6 +31,7 @@ function App() {
         <ProtectedRoute path="/" exact component={Home} />
         <ProtectedRoute path="/booking/:carid" exact component={BookingCar} />
         <ProtectedRoute path="/userbookings" exact component={UserBookings} />
+        <ProtectedRoute path="/aboutus" exact component={AboutUs} />
       </BrowserRouter>
     </div>
   );
