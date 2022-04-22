@@ -47,7 +47,7 @@ function BookingCar({ match }) {
 
   // functions to disable past date
   function disablePastDates(current) {
-    return current && current < moment().day("day");
+    return current && current < moment().toDate();;
   }
 
   function onToken(token){
