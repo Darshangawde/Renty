@@ -29,7 +29,7 @@ function BookingCar({ match }) {
     } else {
       setcar(cars.find((o) => o._id == match.params.carid));
     }
-  }, [cars]);
+  }, [cars]); 
 
   useEffect(() => {
     setTotalAmount(totalHours * car.rentPerHour);
