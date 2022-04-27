@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Renty/static/css/main.3ea9debc.chunk.css",
+    "main.js": "/Renty/static/js/main.eca2aa62.chunk.js",
+    "main.js.map": "/Renty/static/js/main.eca2aa62.chunk.js.map",
+    "runtime-main.js": "/Renty/static/js/runtime-main.86790ab5.js",
+    "runtime-main.js.map": "/Renty/static/js/runtime-main.86790ab5.js.map",
+    "static/css/2.1dcedd5d.chunk.css": "/Renty/static/css/2.1dcedd5d.chunk.css",
+    "static/js/2.8fd4b5be.chunk.js": "/Renty/static/js/2.8fd4b5be.chunk.js",
+    "static/js/2.8fd4b5be.chunk.js.map": "/Renty/static/js/2.8fd4b5be.chunk.js.map",
+    "static/js/3.ec8ba82f.chunk.js": "/Renty/static/js/3.ec8ba82f.chunk.js",
+    "static/js/3.ec8ba82f.chunk.js.map": "/Renty/static/js/3.ec8ba82f.chunk.js.map",
+    "index.html": "/Renty/index.html",
+    "static/css/2.1dcedd5d.chunk.css.map": "/Renty/static/css/2.1dcedd5d.chunk.css.map",
+    "static/css/main.3ea9debc.chunk.css.map": "/Renty/static/css/main.3ea9debc.chunk.css.map",
+    "static/js/2.8fd4b5be.chunk.js.LICENSE.txt": "/Renty/static/js/2.8fd4b5be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86790ab5.js",
+    "static/css/2.1dcedd5d.chunk.css",
+    "static/js/2.8fd4b5be.chunk.js",
+    "static/css/main.3ea9debc.chunk.css",
+    "static/js/main.eca2aa62.chunk.js"
+  ]
+}
