@@ -16,22 +16,21 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route path="/adminlogin" exact component={AdminLogin} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
-      </BrowserRouter>
+      
+        <switch>
+          <Route path="/adminlogin" exact component={AdminLogin} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
 
-      <BrowserRouter>
-        <AdminRoute path="/addcar" exact component={AddCar} />
-        <AdminRoute path="/editcar/:carid" exact component={EditCar} />
-        <AdminRoute path="/admin" exact component={AdminHome} />
-      </BrowserRouter>
+          <AdminRoute path="/addcar" exact component={AddCar} />
+          <AdminRoute path="/editcar/:carid" exact component={EditCar} />
+          <AdminRoute path="/admin" exact component={AdminHome} />
 
-      <BrowserRouter>
-        <ProtectedRoute path="/" exact component={Home} />
-        <ProtectedRoute path="/booking/:carid" exact component={BookingCar} />
-        <ProtectedRoute path="/userbookings" exact component={UserBookings} />
-        <ProtectedRoute path="/aboutus" exact component={AboutUs} />
+          <ProtectedRoute path="/" exact component={Home} />
+          <ProtectedRoute path="/booking/:carid" exact component={BookingCar} />
+          <ProtectedRoute path="/userbookings" exact component={UserBookings} />
+          <ProtectedRoute path="/aboutus" exact component={AboutUs} />
+        </switch>
       </BrowserRouter>
     </div>
   );
@@ -39,18 +38,32 @@ function App() {
 
 export default App;
 
-export function ProtectedRoute(props) {
-  if (localStorage.getItem("user")) {
-    return <Route {...props} />;
-  } else {
-    return <Redirect to="/login" />;
-  }
+export const ProtectedRoute = ({
+  component: Component,
+  ...rest
+  }) => {
+  return (<Route {...rest}
+      render={props => {
+          if (localStorage.getItem("user")) {
+          return <Component {...props} />;
+          } else {
+          return <Redirect to="/login" />;
+          }
+      }}
+  />)
 }
 
-export function AdminRoute(props) {
-  if (localStorage.getItem("admin")) {
-    return <Route {...props} />;
-  } else {
-    return <Redirect to="/adminlogin" />;
-  }
+export const AdminRoute = ({
+  component: Component,
+  ...rest
+  }) => {
+  return (<Route {...rest}
+      render={props => {
+          if (localStorage.getItem("admin")) {
+          return <Component {...props} />;
+          } else {
+          return <Redirect to="/login" />;
+          }
+      }}
+  />)
 }
