@@ -72,6 +72,4 @@ export const deleteCar=(reqObj)=>async dispatch=>{
         console.log(error)
         dispatch({type: 'LOADING' , payload:false})
     }
-      
-
 }
